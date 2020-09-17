@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,29 @@ using System.Threading.Tasks;
 
 namespace Servicios
 {
-    public class Class1
+    public class AlimentosServicio
     {
+        
+        private static List<Alimento> Lista = new List<Alimento>();
+
+
+        public List<Alimento> ObtenerTodos()
+        {
+            return Lista;
+        }
+     
+        public void Crear(Alimento alimento)
+        {
+            int maxId = 0;
+            if (Lista.Count > 0)
+            {
+                maxId = Lista.Max(o => o.Id);
+            }
+
+            alimento.Id = maxId + 1;
+
+            Lista.Add(alimento);
+        }
     }
+    
 }
