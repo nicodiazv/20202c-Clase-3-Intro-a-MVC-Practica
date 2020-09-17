@@ -1,0 +1,25 @@
+﻿
+@model Entidades.Alimento
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Modificar</title>
+</head>
+<body>
+    <div>
+        <form action="/Alimentos/Editar" method="post">
+            <input type="hidden" name="Id" value="@Model.Id" />
+            Nombre: <input type="text" name="Nombre" value="@Model.Nombre" />
+            Peso: <input type="number" name="Peso" value="@Model.Peso" />
+
+            <input type="submit" value="Guardar" />
+        </form>
+    </div>
+</body>
+</html>
