@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Microsoft.Ajax.Utilities;
 using Servicios;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,7 @@ namespace IntroMVC.Controllers
             {
                 Alimento alimento = new Alimento();
                 alimento.Nombre = collection["Nombre"];
-                alimento.Nombre = collection["Peso"];
+                alimento.Peso = int.Parse(collection["Peso"]);
 
                 AlimentosServicio.Crear(alimento);
 
@@ -79,23 +80,10 @@ namespace IntroMVC.Controllers
         // GET: Alimentos/Borrar/5
         public ActionResult Borrar(int id)
         {
-            return View();
+            AlimentosServicio.Borrar(id);
+            return RedirectToAction("Todos");
         }
 
-        // POST: Alimentos/Borrar/5
-        [HttpPost]
-        public ActionResult Borrar(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
     }
 }

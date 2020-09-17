@@ -30,6 +30,11 @@ namespace Servicios
 
             Lista.Add(alimento);
         }
+
+        public void Borrar(int id)
+        {
+            Lista.RemoveAll(o => o.Id == id);
+        }
     }
     
 }
