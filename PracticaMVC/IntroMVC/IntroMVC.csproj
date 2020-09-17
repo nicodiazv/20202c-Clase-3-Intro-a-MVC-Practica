@@ -165,6 +165,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Alimentos\Todos.cshtml" />
     <Content Include="Views\Alimentos\Crear.cshtml" />
+    <Content Include="Views\Alimentos\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

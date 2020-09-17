@@ -58,18 +58,19 @@ namespace IntroMVC.Controllers
         // GET: Alimentos/Editar/5
         public ActionResult Editar(int id)
         {
-            return View();
+            Alimento alimento = AlimentosServicio.ObtenerPorId(id);
+            return View(alimento);
         }
 
         // POST: Alimentos/Editar/5
         [HttpPost]
-        public ActionResult Editar(int id, FormCollection collection)
+        public ActionResult Editar(Alimento alimento)
         {
             try
             {
                 // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                AlimentosServicio.Editar(alimento);
+                return RedirectToAction("Todos");
             }
             catch
             {

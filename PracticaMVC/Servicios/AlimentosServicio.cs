@@ -30,10 +30,21 @@ namespace Servicios
 
             Lista.Add(alimento);
         }
+        public void Editar(Alimento alimento)
+        {
+            Alimento alimentoActual = ObtenerPorId(alimento.Id);
+            alimentoActual.Nombre = alimento.Nombre;
+            alimentoActual.Peso = alimento.Peso;
+        }
 
         public void Borrar(int id)
         {
             Lista.RemoveAll(o => o.Id == id);
+        }
+
+        public Alimento ObtenerPorId(int id)
+        {
+            return Lista.Find(o => o.Id == id);
         }
     }
     
